@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Homestay Hồ Đồng Đò Sóc Sơn</title>
+<title>Villa Hồ Đồng Đò Sóc Sơn</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -24,25 +24,33 @@ max-width:1200px;
 margin:auto;
 }
 
-/* HERO */
+/* HERO VIDEO */
 
 .hero{
+position:relative;
 height:90vh;
-background:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") center/cover;
+overflow:hidden;
+color:white;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
-position:relative;
 }
 
-.hero:before{
-content:"";
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-overlay{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5));
+background:rgba(0,0,0,0.4);
 }
 
 .hero-content{
@@ -57,12 +65,12 @@ margin-bottom:10px;
 
 .hero p{
 font-size:22px;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .cta{
 background:#ff7a18;
-padding:15px 35px;
+padding:15px 40px;
 border-radius:40px;
 color:white;
 text-decoration:none;
@@ -70,13 +78,36 @@ font-size:18px;
 font-weight:600;
 }
 
-/* BENEFIT */
+/* SLIDER */
+
+.slider{
+position:relative;
+max-width:1000px;
+margin:auto;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+transition:0.5s;
+}
+
+.slides img{
+width:100%;
+border-radius:10px;
+}
+
+.controls{
+text-align:center;
+margin-top:10px;
+}
+
+/* FEATURES */
 
 .features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-text-align:center;
 }
 
 .feature{
@@ -84,39 +115,15 @@ background:white;
 padding:30px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
 }
 
-/* GALLERY */
+/* COUNTDOWN */
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-transition:0.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* REVIEW */
-
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.review{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.countdown{
+font-size:36px;
+text-align:center;
+color:#ff7a18;
 }
 
 /* FORM */
@@ -148,12 +155,45 @@ border-radius:30px;
 font-size:18px;
 }
 
-footer{
-background:#111;
+/* FLOAT BUTTON */
+
+.float{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.float a{
+background:#ff7a18;
 color:white;
+padding:12px 18px;
+border-radius:30px;
+text-decoration:none;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.popup-content{
+background:white;
+padding:40px;
+border-radius:10px;
+max-width:400px;
 text-align:center;
-padding:30px;
-margin-top:40px;
 }
 
 </style>
@@ -162,20 +202,31 @@ margin-top:40px;
 
 <body>
 
+<!-- HERO VIDEO -->
+
 <section class="hero">
+
+<video autoplay muted loop>
+
+<source src="https://cdn.coverr.co/videos/coverr-lake-sunrise-1576/1080p.mp4" type="video/mp4">
+
+</video>
+
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<h1>Homestay View Hồ Đồng Đò</h1>
+<h1>Villa View Hồ Đồng Đò</h1>
 
-<p>Chill giữa đồi thông Sóc Sơn – chỉ 40 phút từ Hà Nội</p>
+<p>Ngắm bình minh giữa thiên nhiên Sóc Sơn</p>
 
-<a class="cta" href="#form">Nhận tư vấn ngay</a>
+<a href="#form" class="cta">Đặt tư vấn ngay</a>
 
 </div>
 
 </section>
 
+<!-- FEATURES -->
 
 <section>
 
@@ -184,96 +235,66 @@ margin-top:40px;
 <div class="features">
 
 <div class="feature">
-
-<h3>🌄 View hồ cực đẹp</h3>
-
-<p>Ngắm bình minh trên hồ Đồng Đò.</p>
-
+🌄 View hồ cực đẹp
 </div>
 
 <div class="feature">
-
-<h3>🔥 BBQ ngoài trời</h3>
-
-<p>Không gian riêng tư cho nhóm bạn.</p>
-
+🔥 BBQ ngoài trời
 </div>
 
 <div class="feature">
+🚣 Chèo SUP trên hồ
+</div>
 
-<h3>🚣 Chèo SUP</h3>
-
-<p>Trải nghiệm thể thao trên hồ.</p>
-
+<div class="feature">
+🏡 Villa riêng tư
 </div>
 
 </div>
 
 </section>
 
+<!-- SLIDER -->
 
 <section>
 
-<h2 style="text-align:center">Hình ảnh thực tế</h2>
+<h2 style="text-align:center">Hình ảnh villa</h2>
 
-<div class="gallery">
+<div class="slider">
+
+<div class="slides" id="slides">
+
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
 
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
 
 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
 
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206">
 
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+</div>
 
 </div>
 
 </section>
 
+<!-- COUNTDOWN -->
 
 <section>
 
-<h2 style="text-align:center">Khách hàng đánh giá</h2>
+<h2 style="text-align:center">Ưu đãi đặt sớm</h2>
 
-<div class="reviews">
-
-<div class="review">
-
-⭐️⭐️⭐️⭐️⭐️  
-<p>View hồ cực đẹp, rất chill.</p>
-
-<b>Lan Anh</b>
-
-</div>
-
-<div class="review">
-
-⭐️⭐️⭐️⭐️⭐️  
-<p>Rất thích không gian riêng tư.</p>
-
-<b>Minh Tuấn</b>
-
-</div>
-
-<div class="review">
-
-⭐️⭐️⭐️⭐️⭐️  
-<p>Đi cuối tuần rất hợp.</p>
-
-<b>Thảo Nhi</b>
-
-</div>
-
-</div>
+<div class="countdown" id="countdown"></div>
 
 </section>
 
+<!-- FORM -->
 
 <section id="form">
 
 <div class="form-box">
 
-<h2>Để lại thông tin nhận tư vấn</h2>
+<h2>Để lại thông tin</h2>
 
 <form action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="POST">
 
@@ -291,12 +312,69 @@ margin-top:40px;
 
 </section>
 
+<!-- FLOAT BUTTON -->
 
-<footer>
+<div class="float">
 
-© Homestay Sóc Sơn
+<a href="tel:0900000000">📞 Gọi ngay</a>
 
-</footer>
+<a href="https://zalo.me/0900000000">💬 Zalo</a>
+
+</div>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<h3>Nhận ưu đãi villa</h3>
+
+<p>Để lại số điện thoại để được tư vấn</p>
+
+<input placeholder="Số điện thoại">
+
+<button>Nhận ưu đãi</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* slider */
+
+let index=0
+
+setInterval(()=>{
+index++
+if(index>3)index=0
+document.getElementById("slides").style.transform="translateX(-"+index*100+"%)"
+},4000)
+
+/* countdown */
+
+let countDate=new Date().getTime()+86400000
+
+setInterval(()=>{
+let now=new Date().getTime()
+let distance=countDate-now
+
+let h=Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+let m=Math.floor((distance%(1000*60*60))/(1000*60))
+let s=Math.floor((distance%(1000*60))/1000)
+
+document.getElementById("countdown").innerHTML=h+"h "+m+"m "+s+"s"
+
+},1000)
+
+/* popup */
+
+setTimeout(()=>{
+document.getElementById("popup").style.display="flex"
+},8000)
+
+</script>
 
 </body>
 </html>
