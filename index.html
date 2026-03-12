@@ -76,6 +76,36 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(
 .service-info h4 { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
 .service-info p { font-size: 13.5px; color: #64748b; line-height: 1.4; }
 
+/* CSS REVIEWS - ĐÃ FIX LỖI HIỂN THỊ */
+.rev-container { 
+    background: #f4f6f3; 
+    padding: 80px 0; 
+}
+.rev-track { 
+    display: flex; 
+    gap: 25px; 
+    overflow-x: auto; 
+    padding: 20px 5px; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+}
+.rev-track::-webkit-scrollbar { display: none; }
+
+.rev-card { 
+    min-width: 320px; 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 12px; 
+    scroll-snap-align: start; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    border: 1px solid #f0f0f0;
+    flex-shrink: 0; /* Giúp các card không bị bóp méo */
+}
+.rev-user { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+.rev-user img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.rev-info h4 { font-size: 15px; font-weight: 700; color: var(--primary); margin: 0; }
+.rev-stars { color: #FFB800; font-size: 12px; margin-top: 3px; }
+.rev-content { font-size: 14.5px; color: var(--muted); font-style: italic; line-height: 1.6; margin: 0; }
 /* GALLERY & OTHERS */
 .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 15px; margin-top: 40px; }
 .gallery-grid img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; }
@@ -222,7 +252,8 @@ input { width: 100%; padding: 15px; border-radius: 6px; border: 1px solid #ddd; 
       </div>
     </div>
   </div>
-</section>
+
+/* Cảm nhận khách hàng*/
 <section class="rev-container">
   <div class="container">
     <h2 class="center" style="margin-bottom: 10px; font-weight: 800; font-size: 32px;">CẢM NHẬN KHÁCH HÀNG</h2>
@@ -230,118 +261,77 @@ input { width: 100%; padding: 15px; border-radius: 6px; border: 1px solid #ddd; 
     <div class="rev-track">
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v1" alt="Avatar">
-          <div class="rev-info">
-            <h4>Chị Minh Anh</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Chị Minh Anh</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Không gian cực kỳ trong lành, view hồ Đồng Đò sáng sớm rất đẹp. Các bạn nhân viên hỗ trợ nhiệt tình, đặc biệt là dàn Karaoke hát rất hay!"</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v2" alt="Avatar">
-          <div class="rev-info">
-            <h4>Anh Hoàng Nam</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Anh Hoàng Nam</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Đoàn mình 20 người đi Team building ở đây rất thoải mái. Sân cỏ rộng, bể bơi vô cực siêu đẹp và sạch. Đồ ăn BBQ chuẩn bị khá tươi ngon."</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v3" alt="Avatar">
-          <div class="rev-info">
-            <h4>Chị Thúy Hạnh</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Chị Thúy Hạnh</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Phòng ốc sạch sẽ, decor theo kiểu mộc mạc nhà trong rừng rất ấm cúng. Trẻ con nhà mình rất thích chèo thuyền Kayak ngoài hồ."</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v4" alt="Avatar">
-          <div class="rev-info">
-            <h4>Anh Quốc Bảo</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Anh Quốc Bảo</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Giá cả hợp lý so với chất lượng dịch vụ. Bếp nướng BBQ đầy đủ dụng cụ, gia đình mình chỉ cần mang đồ ăn đến là triển thôi. Rất tiện!"</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v5" alt="Avatar">
-          <div class="rev-info">
-            <h4>Chị Thanh Huyền</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Chị Thanh Huyền</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Thích nhất là bồn tắm view kính nhìn ra rừng thông. Cảm giác thư giãn thực sự sau một tuần làm việc căng thẳng tại nội thành."</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v6" alt="Avatar">
-          <div class="rev-info">
-            <h4>Anh Tiến Dũng</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Anh Tiến Dũng</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Nhà rất rộng và thoáng. Nhóm bạn mình 15 người ở vẫn thấy dư chỗ. Sáng dậy chạy bộ quanh hồ không khí trong lành tuyệt đối."</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v7" alt="Avatar">
-          <div class="rev-info">
-            <h4>Cô Ngọc Lan</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Cô Ngọc Lan</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
-        <p class="rev-content">"Gia đình tôi đã có một kỳ nghỉ cuối tuần rất ý nghĩa. Các cháu nhỏ rất thích hồ bơi lớn. Thủ tục nhận phòng và trả phòng nhanh gọn."</p>
+        <p class="rev-content">"Gia đình tôi đã có một kỳ nghỉ cuối tuần rất ý nghĩa. Các cháu nhỏ rất thích hồ bơi. Thủ tục nhận phòng và trả phòng nhanh gọn."</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v8" alt="Avatar">
-          <div class="rev-info">
-            <h4>Bạn Linh Chi</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-o"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Bạn Linh Chi</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Địa điểm check-in sống ảo cực đẹp. Mọi góc trong homestay đều có thể lên hình lung linh. Chắc chắn sẽ quay lại vào mùa đông!"</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v9" alt="Avatar">
-          <div class="rev-info">
-            <h4>Anh Văn Hậu</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Anh Văn Hậu</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Dịch vụ chèo Sup rất thú vị. Homestay nằm ở vị trí dễ tìm, đường vào rộng rãi, xe 29 chỗ vào thoải mái. Rất phù hợp cho công ty."</p>
       </div>
-
       <div class="rev-card">
         <div class="rev-user">
-          <img src="https://i.pravatar.cc/100?u=v10" alt="Avatar">
-          <div class="rev-info">
-            <h4>Chị Mai Phương</h4>
-            <div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          </div>
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop" alt="Avatar">
+          <div class="rev-info"><h4>Chị Mai Phương</h4><div class="rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
         </div>
         <p class="rev-content">"Chủ nhà cực kỳ hiếu khách và chu đáo. Tối đến nướng BBQ giữa rừng thông cảm giác rất chill. Rất đáng tiền!"</p>
       </div>
-
     </div>
   </div>
 </section>
-
 <section id="form" class="form-section section-padding">
   <div class="container">
     <div class="form-card">
