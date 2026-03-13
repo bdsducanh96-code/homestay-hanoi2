@@ -461,7 +461,7 @@ if (form) {
         mode:'no-cors', 
         body: JSON.stringify({
           name, phone, checkin: checkinDisplay, checkout: checkoutDisplay, 
-          guests, duration: stayDurationText, code: bookingCode, time: new Date().toISOString()
+          guests, duration: stayDurationText, code: bookingCode, time: new Date().toLocaleString("sv-SE", { timeZone: "Asia/Ho_Chi_Minh" })
         })
       }).catch(err => console.warn('Lỗi gửi API'));
 
