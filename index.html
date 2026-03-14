@@ -109,19 +109,19 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(
 .gallery-grid img:hover { transform: scale(1.02); }
 
 /* REVIEWS */
-.rev-track { display: flex; gap: 25px; overflow-x: auto; ing: 20px 5px; scroll-snap-type: x mandatory; }
-.rev { min-width: 320px; background: var(--card-bg); ing: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); scroll-snap-align: start; border: 1px solid #f0f0f0; }
+.rev-track { display: flex; gap: 25px; overflow-x: auto; padding: 20px 5px; scroll-snap-type: x mandatory; }
+.rev { min-width: 320px; background: var(--card-bg); padding: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); scroll-snap-align: start; border: 1px solid #f0f0f0; }
 .rev-name { font-weight: 700; color: var(--primary); margin-bottom: 5px; }
 .rev p { font-style: italic; color: #444; font-size: 15px; }
 
 /* BOOKING FORM */
 .form-section { background: url('https://images.unsplash.com/photo-1519455953755-292201245728?q=80&w=1920&auto=format&fit=crop') center/cover fixed; position: relative; }
 .form-section::before { content: ""; position: absolute; inset: 0; background: rgba(44, 62, 48, 0.88); }
-.form-card { position: relative; z-index: 2; background: var(--glass); max-width: 800px; margin: 0 auto; ing: 50px; border-radius: 16px; box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+.form-card { position: relative; z-index: 2; background: var(--glass); max-width: 800px; margin: 0 auto; padding: 50px; border-radius: 16px; box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
 .form-group { text-align: left; margin-bottom: 25px; }
 .form-group label { display: block; margin-bottom: 10px; font-size: 14px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-input { width: 100%; ing: 15px; border-radius: 6px; border: 1px solid #ddd; font-size: 16px; font-family: inherit; transition: 0.3s; }
+input { width: 100%; padding: 15px; border-radius: 6px; border: 1px solid #ddd; font-size: 16px; font-family: inherit; transition: 0.3s; }
 input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(212, 126, 102, 0.1); }
 .submit-btn { background: var(--primary); border: none; padding: 20px; border-radius: 6px; color: #fff; font-weight: 700; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
 .submit-btn:hover { background: #1a261d; transform: translateY(-2px); }
